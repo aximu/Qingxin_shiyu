@@ -1,4 +1,4 @@
-angchain-nextjs-fastapi
+langchain-nextjs-fastapi
 
 ## Installation
 
