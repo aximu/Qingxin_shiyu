@@ -1,8 +1,35 @@
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* color: #f8f8f8;
+  background: #131318; */
+  color: #90deec;
+  background: #d0dbda;
+}
+
+body input,
+body textarea {
+  color: black;
+}
+
+a {
+  color: #f7fdfd;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+p {
+  margin: 8px 0;
+}
+
+code {
+  color: #ffa500;
+}
+
+li {
+  padding: 4px;
 }
