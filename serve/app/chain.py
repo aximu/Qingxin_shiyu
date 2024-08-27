@@ -98,8 +98,7 @@ def create_session_factory(
     return get_chat_history
 
 ## llm model, local deployed model
-llm = Ollama(model="glm4")
-#llm = Yuan2_LLM('/home/cad/test/nextjs/nextjs-fastapi-langchain-master/server/app/IEITYuan/Yuan2-2B-Mars-hf')
+llm = Yuan2_LLM('/home/cad/test/nextjs/nextjs-fastapi-langchain-master/server/app/IEITYuan/Yuan2-2B-Mars-hf')
 
 _inputs = RunnableMap(
     standalone_question= CONDENSE_QUESTION_PROMPT
