@@ -1,5 +1,5 @@
 # Qingxin_shiyu
-Ai chatbot for healthy diet.
+Ai chatbot for healthy diet.  
 推理基座为 浪潮信息源大模型Yuan2-2B-Mars-hf
 
 # 先决条件
