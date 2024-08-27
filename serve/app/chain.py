@@ -70,14 +70,6 @@ def _is_valid_identifier(value: str) -> bool:
 def create_session_factory(
     base_dir: Union[str, Path],
 ) -> Callable[[str], BaseChatMessageHistory]:
-    """Create a session ID factory that creates session IDs from a base dir.
-
-    Args:
-        base_dir: Base directory to use for storing the chat histories.
-
-    Returns:
-        A session ID factory that creates session IDs from a base path.
-    """
     base_dir_ = Path(base_dir) if isinstance(base_dir, str) else base_dir
     if not base_dir_.exists():
         base_dir_.mkdir(parents=True)
@@ -98,8 +90,7 @@ def create_session_factory(
     return get_chat_history
 
 ## llm model, local deployed model
-llm = Ollama(model="glm4")
-#llm = Yuan2_LLM('/home/cad/test/nextjs/nextjs-fastapi-langchain-master/server/app/IEITYuan/Yuan2-2B-Mars-hf')
+llm = Yuan2_LLM('/home/cad/test/nextjs/nextjs-fastapi-langchain-master/server/app/IEITYuan/Yuan2-2B-Mars-hf')
 
 _inputs = RunnableMap(
     standalone_question= CONDENSE_QUESTION_PROMPT
@@ -144,12 +135,6 @@ conversational_qa_chain = (
 
 class InputChat(BaseModel):
     """Input for the chat endpoint."""
-
-    # The field extra defines a chat widget.
-    # As of 2024-02-05, this chat widget is not fully supported.
-    # It's included in documentation to show how it should be specified, but
-    # will not work until the widget is fully supported for history persistence
-    # on the backend.
     question: str = Field(
         ...,
         description="The human input to the chat system.",
